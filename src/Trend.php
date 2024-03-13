@@ -167,6 +167,7 @@ class Trend
     {
         $adapter = match ($this->builder->getConnection()->getDriverName()) {
             'mysql' => new MySqlAdapter(),
+            'mariadb' => new MySqlAdapter(),
             'sqlite' => new SqliteAdapter(),
             'pgsql' => new PgsqlAdapter(),
             default => throw new Error('Unsupported database driver.'),
